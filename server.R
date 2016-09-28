@@ -5,20 +5,19 @@ shinyServer(
 
   function(input, output) {
     
-    formulaText <- reactive({
-      paste("Chart")
-    })
     
     output$caption <- renderText({
-      formulaText()
+      c("Average weight: ", round(mean(chick[chick$feed == input$feedchoice, 1]), digits = 0), " grams")
     })
     
     output$chickPlot <- renderPlot({
-      boxplot(weight~feed,
-              data = chick[chick$feed == input$feedchoice, ],
-              main = "Chicken Weight by Feed",
-              xlab = "Feed Type",
-              ylab = "Weight")
+      hist(chick[chick$feed == input$feedchoice, 1], breaks = 10,
+           xlab = "weight",
+           col="red",
+           main = c("Chicken weights for feedtype ", input$feedchoice),
+           xlim = c(100,500),
+           ylim = c(0, 4)
+           )
     })
   }
 )

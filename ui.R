@@ -5,7 +5,7 @@ shinyUI(
     
     sidebarLayout(
     sidebarPanel(
-      checkboxGroupInput("feedchoice", label = h3("Feed Type (select at least one)"),
+      selectInput("feedchoice", label = h3("Feed Type"),
                          choices = levels(chick$feed))),
       
       mainPanel(

@@ -1,0 +1,5 @@
+Title: Chicken Weights
+Author: Daniel Jaeger
+AuthorUrl: https://jaegeda.shinyapps.io/CourseraShiny/
+DisplayMode: Showcase
+Type: Shiny
